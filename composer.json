@@ -1,8 +1,8 @@
 {
-    "name": "spatie/laravel-google-calendar",
+    "name": "marzioperez/laravel-google-calendar",
     "description": "Manage events on a Google Calendar",
     "keywords": [
-        "spatie",
+        "marzioperez",
         "calendar",
         "google",
         "event",
@@ -13,9 +13,13 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Freek Van der Herten",
-            "email": "freek@spatie.be",
-            "homepage": "https://spatie.be",
+            "name": "Marzio Perez",
+            "email": "marzioperez@gmail.com",
+            "role": "Developer"
+        },
+        {
+            "name": "Julio Vásconez",
+            "email": "jvasconez28@gmail.com",
             "role": "Developer"
         }
     ],
