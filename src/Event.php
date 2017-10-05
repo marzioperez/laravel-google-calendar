@@ -19,9 +19,12 @@ class Event
     /** @var array */
     protected $attendees;
 
+    protected $params;
+
     public function __construct()
     {
         $this->attendees = [];
+        $this->params = [];
         $this->googleEvent = new Google_Service_Calendar_Event;
     }
 
@@ -137,7 +140,7 @@ class Event
 
         $this->googleEvent->setAttendees($this->attendees);
 
-        $googleEvent = $googleCalendar->$method($this);
+        $googleEvent = $googleCalendar->$method($this, $this->params);
 
         return static::createFromGoogleCalendarEvent($googleEvent, $googleCalendar->getCalendarId());
     }
@@ -150,6 +153,14 @@ class Event
     public function addAttendee(array $attendees)
     {
         $this->attendees[] = $attendees;
+    }
+
+    public function setParams(array $params){
+        $this->params = $params;
+    }
+
+    public function setParam($name, $value){
+        $this->params[$name] = $value;
     }
 
     public function getSortDate(): string
